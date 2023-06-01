@@ -25,3 +25,5 @@ replay_pid*
 
 .idea
 scalablej.iml
+dependency-reduced-pom.xml
+target/
