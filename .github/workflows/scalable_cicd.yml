@@ -27,8 +27,8 @@ jobs:
         java-version: 1.8
         cache: maven
     - name: Build and Package with Maven
-      run: mvn package
-      #run: mvn -B package --file pom.xml
+      #run: mvn package
+      run: mvn -B package --file pom.xml
       
     - name: Executing Program
       run: java -cp .\target\original-scalablej-1.0-SNAPSHOT.jar com.scalablej.core.starter
