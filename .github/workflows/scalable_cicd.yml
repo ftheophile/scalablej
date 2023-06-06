@@ -22,7 +22,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Setup scala
-      run: apt-get install scala=2.12.\*
+      run: sudo apt-get install scala=2.12.\*
       
     - name: Test Scala
       run: scala -version
