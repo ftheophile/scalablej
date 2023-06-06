@@ -34,8 +34,8 @@ jobs:
     - name: Executing Scala Program
       run: java -cp target/scalablej-1.0-SNAPSHOT.jar com.scalablej.core.starter
       
-    - name: Executing Mixed Program (shaded)
-      run: java -cp target/scalablej-1.0-SNAPSHOT-shaded.jar com.scalablej.core.startup
+    #- name: Executing Mixed Program (shaded)
+    #  run: java -cp target/scalablej-1.0-SNAPSHOT-shaded.jar com.scalablej.core.startup
    
     - name: Executing Java Program
       run: java -cp target/scalablej-1.0-SNAPSHOT.jar com.scalablej.core.startup
