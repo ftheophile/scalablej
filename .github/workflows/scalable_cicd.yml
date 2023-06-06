@@ -41,7 +41,7 @@ jobs:
       run: java -cp target/scalablej-1.0-SNAPSHOT-shaded.jar com.scalablej.core.startup
    
     - name: Executing Java Program
-      run: java -cp scala-library-2.12.5.jar -jar target/scalablej-1.0-SNAPSHOT.jar com.scalablej.core.startup
+      run: java -cp scala-library-2.12.5.jar target/scalablej-1.0-SNAPSHOT.jar com.scalablej.core.startup
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     #- name: Update dependency graph
