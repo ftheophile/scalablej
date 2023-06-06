@@ -28,10 +28,10 @@ jobs:
         cache: maven
     - name: Build and Package with Maven
       #run: mvn package
-      run: pwd && ls -la /home/runner/work/scalablej/scalablej && mvn -B package --file pom.xml
+      run: pwd && mvn -B package --file pom.xml && ls -la /home/runner/work/scalablej/scalablej | grep 'target'
       
     - name: Executing Program
-      run: java -cp .\target\original-scalablej-1.0-SNAPSHOT.jar com.scalablej.core.starter
+      run: java -cp target/original-scalablej-1.0-SNAPSHOT.jar com.scalablej.core.starter
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
       uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
