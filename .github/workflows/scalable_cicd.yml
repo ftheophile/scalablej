@@ -21,29 +21,24 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Setup scala
-      run: apt-get install scala=2.12.\*
-      
-    - name: Test Scala
-      run: scala -version
-
     - name: Set up JDK 1.8
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
         cache: maven
+
     - name: Build and Package with Maven
       #run: mvn package
       run: mvn -B package --file pom.xml && ls -la /home/runner/work/scalablej/scalablej/target
       
-    - name: Executing Program with Java
+    - name: Executing Java Program
       run: java -cp target/scalablej-1.0-SNAPSHOT.jar com.scalablej.core.startup
       
-    - name: Executing Program with Scala
-      run: scala -cp target/original-scalablej-1.0-SNAPSHOT.jar com.scalablej.core.startup
-      
     - name: Executing Scala Program
-      run: scala -cp target/original-scalablej-1.0-SNAPSHOT.jar com.scalablej.core.starter
+      run: java -cp target/scalablej-1.0-SNAPSHOT.jar com.scalablej.core.starter
+      
+    - name: Executing Java Program (shaded)
+      run: java -cp target/original-scalablej-1.0-SNAPSHOT-shaded.jar com.scalablej.core.startup
       
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
