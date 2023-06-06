@@ -28,7 +28,7 @@ jobs:
         cache: maven
     - name: Build and Package with Maven
       #run: mvn package
-      run: pwd && mvn -B package --file pom.xml && ls -la /home/runner/work/scalablej/scalablej | grep 'target'
+      run: mvn -B package --file pom.xml && ls -la /home/runner/work/scalablej/scalablej/target
       
     - name: Executing Program with Java
       run: java -cp target/scalablej-1.0-SNAPSHOT.jar com.scalablej.core.startup
