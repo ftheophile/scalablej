@@ -6,7 +6,7 @@ public class startup {
         GalaxyOne galaxyOne = new GalaxyOne();
         galaxyOne.start("Java");
 
-        Starship starship = new Starship();
-        starship.start("Java");
+//        Starship starship = new Starship();
+//        starship.start("Java");
     }
 }
