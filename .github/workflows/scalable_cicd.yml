@@ -27,12 +27,6 @@ jobs:
         java-version: 1.8
         cache: maven
 
-    - name: Setup scala
-      run: sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install scala=2.12.\*
-      
-    - name: Test Scala
-      run: scala -version
-
     - name: Build and Package with Maven
       #run: mvn package
       run: mvn -B package --file pom.xml && ls -la /home/runner/work/scalablej/scalablej/target
@@ -41,7 +35,7 @@ jobs:
       run: java -cp target/scalablej-1.0-SNAPSHOT.jar com.scalablej.core.startup
       
     - name: Executing Program with Scala
-      run: scala -cp target/original-scalablej-1.0-SNAPSHOT.jar com.scalablej.core.startup
+      run: java -cp target/scalablej-1.0-SNAPSHOT.jar com.scalablej.core.starter
       
     - name: Executing Scala Program
       run: scala -cp target/original-scalablej-1.0-SNAPSHOT.jar com.scalablej.core.starter
