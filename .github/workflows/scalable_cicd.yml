@@ -35,13 +35,13 @@ jobs:
       run: mvn -B package --file pom.xml && ls -la /home/runner/work/scalablej/scalablej/target
  
     - name: Executing Scala Program (shaded)
-      run: java -cp target/scalablej-1.0-SNAPSHOT-shaded.jar com.scalablej.core.starter
+      run: java -cp target/scalablej-1.0-SNAPSHOT-shaded.jar com.scalablej.core.Starter
       
     - name: Executing Java Program (shaded)
-      run: java -cp target/scalablej-1.0-SNAPSHOT-shaded.jar com.scalablej.core.startup
+      run: java -cp target/scalablej-1.0-SNAPSHOT-shaded.jar com.scalablej.core.Startup
    
     - name: Executing Java Program
-      run: javac -cp jar/scala-library-2.12.5.jar:jar/target/scalablej-1.0-SNAPSHOT.jar com.scalablej.core.startup
+      run: javac -cp scala-library-2.12.5.jar:target/scalablej-1.0-SNAPSHOT.jar com.scalablej.core.startup
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     #- name: Update dependency graph
