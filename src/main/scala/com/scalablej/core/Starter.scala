@@ -9,6 +9,6 @@ object Starter {
     val galaxyOne = new GalaxyOne()
     galaxyOne.start("Scala")
 
-    galaxyOne.traitOps()
+    galaxyOne.traitOps("Scala")
   }
 }

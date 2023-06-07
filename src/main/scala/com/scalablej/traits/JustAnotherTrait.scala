@@ -1,5 +1,5 @@
 package com.scalablej.traits
 
 trait JustAnotherTrait {
-  def traitOps(): Unit;
+  def traitOps(opt: String): Unit;
 }

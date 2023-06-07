@@ -8,5 +8,7 @@ public class Startup {
 
         Starship starship = new Starship();
         starship.start("Java");
+
+        starship.interfaceOps("Java");
     }
 }
