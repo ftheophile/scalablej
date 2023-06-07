@@ -1,6 +1,6 @@
 package com.scalablej.core;
 
-public class startup {
+public class Startup {
     public static void main(String[] args) {
         System.out.println("Hello Java Core");
         GalaxyOne galaxyOne = new GalaxyOne();
