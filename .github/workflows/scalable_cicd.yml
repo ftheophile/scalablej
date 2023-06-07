@@ -40,10 +40,15 @@ jobs:
       
     - name: Executing Java Program (shaded)
       run: java -cp target/scalablej-1.0-SNAPSHOT-shaded.jar com.scalablej.core.Startup
-   
+      
+    - name: Info on shaded jars
+      run: echo "Avoid using shaded jars, too large! All dependencies in one ja :("
+
     - name: Executing Java Program
       run: java -cp scala-library-2.12.5.jar:target/scalablej-1.0-SNAPSHOT.jar com.scalablej.core.Startup
-      #run: echo "Would be nice if we avoid using shaded jar, it's very large"
+    
+    - name: Executing Scala Program
+      run: java -cp scala-library-2.12.5.jar:target/scalablej-1.0-SNAPSHOT.jar com.scalablej.core.Starter
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     #- name: Update dependency graph
